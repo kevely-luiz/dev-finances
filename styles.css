@@ -167,6 +167,45 @@ td.income{
 td.expense{
     color: #e92929;
 }
+/* Modal ----------------------------------------------------------- */
+.modal-overlay{
+    /* ocupar 100% da tela */
+    width: 100%;
+    height: 100%; 
+
+    /* fundo preto transparente */
+    background-color: rgba(0,0,0,0.7); 
+    position: fixed; 
+    top: 0;
+
+    /* deixar a caixinha no meio */
+    display:flex;
+    align-items: center;
+    justify-content: center;
+
+    /* esconder modal */
+    opacity: 0;
+    visibility: hidden;
+}
+
+.modal-overlay.active{
+    opacity: 1;
+    visibility: visible;
+}
+.modal{
+    /* caixinha que se adapta */
+    background: #f0f2f5;
+    padding: 2.4rem;
+
+    /* responsive */
+    width: 90%;
+    max-width: 500px;
+}
+
+/* Form ----------------------------------------------------------- */
+#form{
+    max-width: 500px;
+}
 
 /* Footer ----------------------------------------------------------- */
 
@@ -188,6 +227,6 @@ footer{
     #balance{
         display: grid;
         grid-template-columns: repeat(3, 1fr);
-        gap: 2rem;
+        gap: 2rem; /* space between */
     }
 }
