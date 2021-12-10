@@ -29,8 +29,8 @@
 
             <div class="card">
                 <h3>
-                <span>Entradas</span>
-                <img src="./assets/income.svg" alt="imagem de entradas">
+                    <span>Entradas</span>
+                    <img src="./assets/income.svg" alt="imagem de entradas">
                 </h3>
                 <p>R$ 5.000,00</p>
             </div>
@@ -56,7 +56,10 @@
         <section id="transaction">
             <h2 class="sr-only">Transações</h2>
 
-            <a href="#" class="button new">+ Nova Transação</a>
+            <a 
+            href="#" 
+            onclick="Modal.open()"
+            class="button new">+ Nova Transação</a>
 
             <table id="data-table">
                 <thead>
@@ -98,8 +101,10 @@
         </section>
     </main>
 
-    <div class="modal-overlay active"> <!-- fundo -->
-        <div class="modal"> <!--caixinha branca-->
+    <div class="modal-overlay">
+        <!-- fundo -->
+        <div class="modal">
+            <!--caixinha branca-->
             <div id="form">
                 <h2>Nova Transação</h2>
                 <form action=''>
@@ -119,7 +124,7 @@
                         <input type="date" id="date" name="date">
                     </div>
                     <div class="input-group actions">
-                        <a href="#" class="button cancel">Cancelar</a>
+                        <a href="#" onclick="Modal.close()" class="button cancel">Cancelar</a>
                         <button>Salvar</button>
                     </div>
                 </form>
@@ -128,9 +133,24 @@
     </div>
 
     <footer>
-        <p>dev.finance$</p>
+        <p>2021 - dev.finance$</p>
     </footer>
 
+<script>
+    const Modal = {
+        open(){
+            //abrir modal
+            //adicionar class active no modal
+            document.querySelector('.modal-overlay').classList.add('active');
+        },
+        close(){
+            //fechar modal
+            //retirar a classe active do modal
+            document.querySelector('.modal-overlay').classList.remove('active');
+
+        }
+    }
+</script>
 </body>
 
 </html>
